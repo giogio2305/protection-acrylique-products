@@ -1,0 +1,309 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<style>
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display?styles=98774,98777,98776,98772,98773,98775,98770,98771,98769');
+#product{
+    width: 100%;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    font-family: 'SF Pro Display', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    overflow: clip;
+}
+/* filter bar */
+#product .filter-bar{
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+#product .filter-bar .hd{
+    margin: 0 8px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+#product .filter-bar .filter-container select{
+    border: none;
+    outline: 0;
+    padding: 6px;
+    background-color: transparent;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    color: #737373;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+/* Card section  */
+#product .card-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+}
+#product .card-container .card{
+    width: 44vw;
+    height: 72vh;
+    background-color: #fff;
+    margin: 24px 28px 24px 0;
+    border-radius: 2px;
+    /* box-shadow: 0 3px 6px #00000030; */
+}
+#product .card .swiper{
+    background-color: #F5F5F5;
+    width: 100%;
+    height: 70%;
+}
+#product .card .swiper .swiper-wrapper{
+    width: 100%;
+    height: 100%;
+}
+#product .card .swiper .swiper-wrapper .swiper-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#product .card .swiper .swiper-wrapper .swiper-slide  img{
+max-width: 332px;
+max-height: 332px;
+}
+#product .card .content {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+#product .card .content .text-block{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    margin: 0 4px;
+    padding-left: 4px;
+}
+#product .card .content .text-block .title{
+    font-size: 14pt;
+    font-weight: 700;
+    margin-top: 16px;
+}
+#product .card .content .options {
+    font-size: 12pt;
+    font-weight: 200;
+    color: #626262;
+    margin: 6px 0;
+}
+#product .card .content .price{
+    margin-bottom: 12px;
+}
+#product .card .content .price b{
+    color: #0048D5
+}
+
+
+#product .card .content .icon-block {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#product .card .content .icon-block img{
+    max-width: 60px;
+    max-height: 82px;
+    cursor: pointer;
+}
+
+/* Swiper custom css */
+#product .swiper-pagination > .swiper-pagination-bullet-active {
+    background-color: #8D8D8D;
+}
+#product .swiper-button-next::after, .swiper-button-prev::after{
+    color: #222;
+    font-size: 28px;
+}
+
+/* Responsive MQ */
+@media screen and (max-width: 908px) {
+    #product .filter-bar{
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+    }
+    #product .filter-bar .hd{
+        margin: 6px 8px;
+    }
+    #product .filter-bar .filter-container select{
+        margin: 0 1px;
+    }
+    #product .card-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    }
+    #product .card-container .card{
+        width: 92vw;
+        height: 68vh;
+        margin: 20px auto;
+        padding: 4px;
+        border-radius: 12px;
+    }
+    #product .card-container .card:hover{
+        border: 2px solid #0048D5;
+    }
+    #product .card .swiper .swiper-wrapper .swiper-slide  img{
+        max-width: 48vw;
+        max-height: 48vh;
+        }
+
+
+
+        #product .card .content .text-block{
+            justify-content: start;
+        }
+
+        #product .card .content .text-block .title{
+            max-width: 100%;
+            font-size: 13pt;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #product .card .content .price{
+        margin-top: 28px;
+        }
+        #product .card .content .text-block .options, .price{
+            font-size: 14px;
+        }
+
+        #product .card .content .icon-block img{
+            max-width: 12vw;
+            max-height: 16vh;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+}
+</style>
+<section id="product">
+    <!-- fiter bar -->
+    <div class="filter-bar">
+        <span class="hd">Filtres:</span>
+        <div class="filter-container">
+            <select name="disp" id="disp">
+                <option  selected disabled>Disponibilités</option>
+                <option value="av">Disponible</option>
+                <option value="ru">En rupture</option>
+            </select>
+
+            <select name="sort" id="sort">
+                <option value="1">Trier par</option>
+            </select>
+
+            <select name="couleur" id="couleur">
+                <option value="1">Couleur</option>
+            </select>
+
+            <select name="prix" id="prix">
+                <option value="1">Prix</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Card container -->
+    <div class="card-container">
+        <div class="card">
+            <div class="slide swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="./assets/coio.png" alt="slide 1"></div>
+                    <div class="swiper-slide"><img src="./assets/coio.png" alt="slide 2"> </div>
+                    <div class="swiper-slide"><img src="./assets/coio.png" alt="Slide 3"></div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+            </div>
+            <div class="content">
+                <div class="text-block">
+                    <div>
+                        <div class="title">Protection Elite Trainer Box ETB</div>
+                        <div class="options">Option d’achat de 1 a 10</div>    
+                    </div>
+                    <div class="price">à partir de <b>32,90€</b></div>
+                </div>
+                <div class="icon-block">
+                    <img src="./assets/ETB.png" alt="">
+                    <img src="./assets/UV.png" alt="">
+                    <img src="./assets/CRL.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="slide swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="./assets/ctit.png" alt="slide 1"></div>
+                    <div class="swiper-slide"><img src="./assets/ctit.png" alt="slide 2"> </div>
+                    <div class="swiper-slide"><img src="./assets/ctit.png" alt="Slide 3"></div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+            </div>
+            <div class="content">
+                <div class="text-block">
+                    <div>
+                        <div class="title">Protection Display</div>
+                        <div class="options">Option d’achat de 1 a 10</div>    
+                    </div>
+                    <div class="price">à partir de <b>29,90€</b></div>
+                </div>
+                <div class="icon-block">
+                    <img src="./assets/DIS.png" alt="">
+                    <img src="./assets/UV.png" alt="">
+                    <img src="./assets/CRL.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Swiper configurations -->
+    <script>
+        new Swiper('.swiper', {
+          // Optional parameters
+          direction: 'horizontal',
+          loop: true,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },    
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+          },
+        });
+    </script>
